@@ -17,11 +17,11 @@ class $modify(PlayLayer) {
         auto player1 = this->m_player1;
         auto player2 = this->m_player2;
 
-        if (player1->m_iconSprite->getColor() == ccColor3B(0,0,0) && !player1->m_hasGlow) {
+        if (player1->m_iconSprite->getColor() == ccColor3B{0,0,0} && !player1->m_hasGlow) {
             player1->m_iconGlow->getParent()->setVisible(false);
         }
 
-        if (player2->m_iconSprite->getColor() == ccColor3B(0,0,0) && !player2->m_hasGlow) {
+        if (player2->m_iconSprite->getColor() == ccColor3B{0,0,0} && !player2->m_hasGlow) {
             player2->m_iconGlow->getParent()->setVisible(false);
         }
 		
@@ -36,11 +36,11 @@ class $modify(LevelEditorLayer) {
         auto player1 = this->m_player1;
         auto player2 = this->m_player2;
 
-        if (player1->m_iconSprite->getColor() == ccColor3B(0,0,0) && !player1->m_hasGlow) {
+        if (player1->m_iconSprite->getColor() == ccColor3B{0,0,0} && !player1->m_hasGlow) {
             player1->m_iconGlow->getParent()->setVisible(false);
         }
 
-        if (player2->m_iconSprite->getColor() == ccColor3B(0,0,0) && !player2->m_hasGlow) {
+        if (player2->m_iconSprite->getColor() == ccColor3B{0,0,0} && !player2->m_hasGlow) {
             player2->m_iconGlow->getParent()->setVisible(false);
         }
 		
@@ -62,7 +62,7 @@ class $modify(GJBaseGameLayer) {
         }
 
         if (player1->m_isRobot) {
-            if (player2->m_iconSprite->getColor() == ccColor3B(0,0,0) && !hasGlow) {
+            if (player2->m_iconSprite->getColor() == ccColor3B{0,0,0} && !hasGlow) {
                 CCArrayExt<CCNode*> children = getChildOfType<CCPartAnimSprite>(player2->m_robotSprite, 0)->getChildren();
                 for (auto* child : children) {
                     if (child->getZOrder() == -1){
@@ -72,7 +72,7 @@ class $modify(GJBaseGameLayer) {
                 }
             }
         } else if (player1->m_isSpider) {
-            if (player2->m_iconSprite->getColor() == ccColor3B(0,0,0) && !hasGlow) {
+            if (player2->m_iconSprite->getColor() == ccColor3B{0,0,0} && !hasGlow) {
                 CCArrayExt<CCNode*> children = getChildOfType<CCPartAnimSprite>(player2->m_spiderSprite, 0)->getChildren();
                 for (auto* child : children) {
                     if (child->getZOrder() == -1){
@@ -90,7 +90,7 @@ class $modify(PlayerObject) {
         PlayerObject::toggleRobotMode(p0, p1);
 
         if (PlayLayer::get() || LevelEditorLayer::get()) {
-            if (this->m_iconSprite->getColor() == ccColor3B(0,0,0) && !this->m_hasGlow) {
+            if (this->m_iconSprite->getColor() == ccColor3B{0,0,0} && !this->m_hasGlow) {
                 CCArrayExt<CCNode*> children = getChildOfType<CCPartAnimSprite>(this->m_robotSprite, 0)->getChildren();
                 for (auto* child : children) {
                     if (child->getZOrder() == -1){
@@ -106,7 +106,7 @@ class $modify(PlayerObject) {
         PlayerObject::toggleSpiderMode(p0, p1);
 
         if (PlayLayer::get() || LevelEditorLayer::get()) {
-            if (this->m_iconSprite->getColor() == ccColor3B(0,0,0) && !this->m_hasGlow) {
+            if (this->m_iconSprite->getColor() == ccColor3B{0,0,0} && !this->m_hasGlow) {
                 CCArrayExt<CCNode*> children = getChildOfType<CCPartAnimSprite>(this->m_spiderSprite, 0)->getChildren();
                 for (auto* child : children) {
                     if (child->getZOrder() == -1){
@@ -125,7 +125,7 @@ class $modify(PlayerObject) {
 
 //         log::debug("{} {} {}", this->m_firstLayer->getColor().r, this->m_firstLayer->getColor().g, this->m_firstLayer->getColor().b);
 
-//         if (this->m_firstLayer->getColor() == ccColor3B(0,0,0) && !GameManager::get()->getPlayerGlow()) {
+//         if (this->m_firstLayer->getColor() == ccColor3B{0,0,0} && !GameManager::get()->getPlayerGlow()) {
 //             log::warn("1");
 //             this->m_outlineSprite->setVisible(false);
 
