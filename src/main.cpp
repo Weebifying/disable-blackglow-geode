@@ -21,7 +21,13 @@ class $modify(PlayLayer) {
             player1->m_iconGlow->getParent()->setVisible(false);
         }
 
-        if (player2->m_iconSprite->getColor() == ccColor3B{0,0,0} && !player2->m_hasGlow) {
+        bool hasGlow = player2->m_hasGlow;
+
+        if (Loader::get()->isModLoaded("weebify.separate_dual_icons")) {
+            hasGlow = Loader::get()->getLoadedMod("weebify.separate_dual_icons")->getSavedValue<bool>("glow");
+        }
+
+        if (player2->m_iconSprite->getColor() == ccColor3B{0,0,0} && !hasGlow) {
             player2->m_iconGlow->getParent()->setVisible(false);
         }
 		
@@ -40,7 +46,13 @@ class $modify(LevelEditorLayer) {
             player1->m_iconGlow->getParent()->setVisible(false);
         }
 
-        if (player2->m_iconSprite->getColor() == ccColor3B{0,0,0} && !player2->m_hasGlow) {
+        bool hasGlow = player2->m_hasGlow;
+
+        if (Loader::get()->isModLoaded("weebify.separate_dual_icons")) {
+            hasGlow = Loader::get()->getLoadedMod("weebify.separate_dual_icons")->getSavedValue<bool>("glow");
+        }
+
+        if (player2->m_iconSprite->getColor() == ccColor3B{0,0,0} && !hasGlow) {
             player2->m_iconGlow->getParent()->setVisible(false);
         }
 		
@@ -90,7 +102,17 @@ class $modify(PlayerObject) {
         PlayerObject::toggleRobotMode(p0, p1);
 
         if (PlayLayer::get() || LevelEditorLayer::get()) {
-            if (this->m_iconSprite->getColor() == ccColor3B{0,0,0} && !this->m_hasGlow) {
+            PlayerObject* player2;
+            if (PlayLayer::get()) player2 = PlayLayer::get()->m_player2;
+            else player2 = LevelEditorLayer::get()->m_player2;
+
+            bool hasGlow = player2->m_hasGlow;
+
+            if (Loader::get()->isModLoaded("weebify.separate_dual_icons")) {
+                hasGlow = Loader::get()->getLoadedMod("weebify.separate_dual_icons")->getSavedValue<bool>("glow");
+            }
+
+            if (this->m_iconSprite->getColor() == ccColor3B{0,0,0} && !hasGlow) {
                 CCArrayExt<CCNode*> children = getChildOfType<CCPartAnimSprite>(this->m_robotSprite, 0)->getChildren();
                 for (auto* child : children) {
                     if (child->getZOrder() == -1){
@@ -106,7 +128,17 @@ class $modify(PlayerObject) {
         PlayerObject::toggleSpiderMode(p0, p1);
 
         if (PlayLayer::get() || LevelEditorLayer::get()) {
-            if (this->m_iconSprite->getColor() == ccColor3B{0,0,0} && !this->m_hasGlow) {
+            PlayerObject* player2;
+            if (PlayLayer::get()) player2 = PlayLayer::get()->m_player2;
+            else player2 = LevelEditorLayer::get()->m_player2;
+
+            bool hasGlow = player2->m_hasGlow;
+
+            if (Loader::get()->isModLoaded("weebify.separate_dual_icons")) {
+                hasGlow = Loader::get()->getLoadedMod("weebify.separate_dual_icons")->getSavedValue<bool>("glow");
+            }
+
+            if (this->m_iconSprite->getColor() == ccColor3B{0,0,0} && !hasGlow) {
                 CCArrayExt<CCNode*> children = getChildOfType<CCPartAnimSprite>(this->m_spiderSprite, 0)->getChildren();
                 for (auto* child : children) {
                     if (child->getZOrder() == -1){
