@@ -9,5 +9,12 @@
 	"id": "weebify.disable_black_glow",
 	"name": "No Force Glow",
 	"developer": "Weebify",
-	"description": "Disable the forced glow when the primary color is black"
+	"description": "Disable the forced glow when the primary color is black",
+	"incompatibilities": [
+		{
+			"id": "rooot.custom-gamemode-colors",
+			"version": ">=0.1.0",
+			"importance": "conflicting"
+		}
+	]
 }
