@@ -9,3 +9,7 @@ Disable the forced glow on the player when the primary color in use is black
 ## Potentially incompatible mods:
 - rooot's Custom Gamemode Colors
 - TheSillyDoggo's QOLMod (icon effects section)
+- Terma's Ambient Icons (idk i havent actually tested lol)
+
+# Special thanks to:
+- [Erymanthus](https://github.com/RayDeeUx), for testing this mod on MacOS!
