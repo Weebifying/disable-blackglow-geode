@@ -150,36 +150,3 @@ class $modify(PlayerObject) {
         }
     }
 };
-
-// class $modify(SimplePlayer) {
-//     bool init(int p0) {
-//         if (!SimplePlayer::init(p0)) return false;
-
-//         log::debug("{} {} {}", this->m_firstLayer->getColor().r, this->m_firstLayer->getColor().g, this->m_firstLayer->getColor().b);
-
-//         if (this->m_firstLayer->getColor() == ccColor3B{0,0,0} && !GameManager::get()->getPlayerGlow()) {
-//             log::warn("1");
-//             this->m_outlineSprite->setVisible(false);
-
-//             CCArrayExt<CCNode*> robotChildren = getChildOfType<CCPartAnimSprite>(this->m_robotSprite, 0)->getChildren();
-//             for (auto* child : robotChildren) {
-//                 if (child->getZOrder() == -1){
-//                     log::warn("2");
-//                     child->setVisible(false);
-//                     break;
-//                 }
-//             }
-            
-//             CCArrayExt<CCNode*> spiderChildren = getChildOfType<CCPartAnimSprite>(this->m_spiderSprite, 0)->getChildren();
-//             for (auto* child : spiderChildren) {
-//                 if (child->getZOrder() == -1){
-//                     log::warn("3");
-//                     child->setVisible(false);
-//                     break;
-//                 }
-//             }
-//         }
-
-//         return true;
-//     }
-// };
