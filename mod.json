@@ -1,10 +1,11 @@
 {
-	"geode": "3.0.0-alpha.1",
+	"geode": "3.0.0-alpha.2",
 	"gd": {
 		"win": "2.206",
-		"android": "2.206"
+		"android": "2.206",
+		"mac": "2.206"
 	},
-	"version": "v1.0.1-beta.1",
+	"version": "v1.0.1-beta.2",
 	"id": "weebify.disable_black_glow",
 	"name": "No Force Glow",
 	"developer": "Weebify",
